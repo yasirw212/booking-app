@@ -14,7 +14,7 @@ app.get('/', (req: Request, res: Response) => {
 
 mongoose.connect(process.env.MONGODB_URI as string, {
     
-})
+})  
 .then(() => app.listen(4001, () => {
     console.log(`Listening on localhost:4001...`)
 }))

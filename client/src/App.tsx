@@ -1,18 +1,18 @@
 
-import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './layouts/Layout'
 
 function App() {
 
   return (
-    // <>
       <Routes>
-        <Route path='/' element={<Layout></Layout>}></Route>
-        <Route path='/search'></Route>
-        {/* <Route path='*' element={<Navigate to="/" />}></Route> */}
+        <Route path='/' element={<Layout>
+          <span >Home Page</span>  
+        </Layout>}></Route>
+        <Route path='/search' element={<Layout>
+          <p>Search Page</p>
+        </Layout>}></Route>
       </Routes>
-    // </>
   )
 }
 
