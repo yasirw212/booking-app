@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('yasirwilliams-dockerhub')
+    }
+
+    stages {
+        stage('Pull code from git') {
+            steps {
+                git branch: 'master', url: 'https://github.com/yasirw212/booking-app.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh ('docker build -t yasirwilliams/booking-app:backend-v1.0.0')
+            }
+        }
+
+        stage('Login') {
+            steps {
+                sh ('echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin')
+            }
+        }
+
+        stage('Push'){
+            steps {
+                sh('docker push yasirwilliams/booking-app:backend-v1.0.0')
+            }
+        }
+    }
+    post {
+        always {
+            sh 'docker logout'
+        }
+    }
+}
