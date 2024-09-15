@@ -14,7 +14,7 @@ pipeline {
 
         stage('Build'){
             steps {
-                sh ('docker build -t yasirwilliams/booking-app:frontend-v1.0.0')
+                sh ('docker build -t yasirwilliams/booking-app:frontend-v1.0.0 .')
             }
         }
 
