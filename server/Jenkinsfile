@@ -14,6 +14,7 @@ pipeline {
 
         stage('Build') {
             steps {
+                sh ('whoami')
                 sh ('docker build -t yasirwilliams/booking-app:backend-v1.0.0')
             }
         }
