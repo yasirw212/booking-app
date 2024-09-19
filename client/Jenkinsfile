@@ -14,7 +14,7 @@ pipeline {
 
         stage('Build'){
             steps {
-                sh( ./client/vite.config.ts)
+                sh( 'cat ./client/vite.config.ts')
                 sh ('echo $DOCKERHUB_CREDENTIALS_USR')
                 sh ('docker build -t yasirwilliams/booking-app:frontend-v1.0.2 ./client/')
             }
