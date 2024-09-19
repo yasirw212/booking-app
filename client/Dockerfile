@@ -10,4 +10,8 @@ RUN npm install
 
 EXPOSE 8080
 
+<<<<<<< auth
 ENTRYPOINT [ "npm", "run", "dev" ]
+=======
+ENTRYPOINT ["npm", "run", "dev"]
+>>>>>>> main
