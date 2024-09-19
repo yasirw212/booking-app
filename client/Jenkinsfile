@@ -15,7 +15,7 @@ pipeline {
         stage('Build'){
             steps {
                 sh ('echo $DOCKERHUB_CREDENTIALS_USR')
-                sh ('docker build -t yasirwilliams/booking-app:frontend-v1.0.1 ./client/')
+                sh ('docker build -t yasirwilliams/booking-app:frontend-v1.0.2 ./client/')
             }
         }
 
@@ -27,7 +27,7 @@ pipeline {
 
         stage('Push'){
             steps {
-                sh ('docker push yasirwilliams/booking-app:frontend-v1.0.1')
+                sh ('docker push yasirwilliams/booking-app:frontend-v1.0.2')
             }
         }
     }
