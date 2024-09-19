@@ -27,7 +27,7 @@ pipeline {
 
         stage('Push'){
             steps {
-                sh ('docker push yasirwilliams/booking-app:frontend-v1.0.0')
+                sh ('docker push yasirwilliams/booking-app:frontend-v1.0.1')
             }
         }
     }
