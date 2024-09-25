@@ -2,12 +2,12 @@ FROM node:18-alpine
 
 WORKDIR /booking-app-server
 
-COPY package.json .
+COPY  package.json .
 
 COPY . .
 
-RUN npm install
+RUN "npm install"
 
 EXPOSE 7000
 
-ENTRYPOINT ["npm", "run", "dev"]
+ENTRYPOINT [ "npm", "run", "dev" ]

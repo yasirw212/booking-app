@@ -6,20 +6,19 @@ pipeline {
     }
 
     stages {
-        stage('Pull code from git') {
+        stage('Pull code from git'){
             steps {
-                git branch: 'master', url: 'https://github.com/yasirw212/booking-app.git'
+                git branch: 'main', url: 'https://github.com/yasirw212/booking-app.git'
             }
         }
 
-        stage('Build') {
+        stage('Build'){
             steps {
-                sh ('whoami')
-                sh ('docker build -t yasirwilliams/booking-app:backend-v1.0.0')
+                sh ('docker build -t booking-app:backend-v1.0.0 ./server')
             }
         }
 
-        stage('Login') {
+        stage('Login'){
             steps {
                 sh ('echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin')
             }
@@ -27,7 +26,7 @@ pipeline {
 
         stage('Push'){
             steps {
-                sh('docker push yasirwilliams/booking-app:backend-v1.0.0')
+                sh ('docker push yasirwilliams/booking-app:backend-v1.0.0')
             }
         }
     }
