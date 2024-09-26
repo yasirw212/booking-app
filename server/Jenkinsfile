@@ -14,7 +14,7 @@ pipeline {
 
         stage('Build'){
             steps {
-                sh ('docker build -t booking-app:backend-v1.0.0 ./server')
+                sh ('docker build -t booking-app:backend-v1.0.0 ./server/')
             }
         }
 
