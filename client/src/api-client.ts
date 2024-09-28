@@ -6,6 +6,7 @@ export const register = async (formData: RegisterFormData) => {
    await console.log(API_BASE_URL)
      const response = await fetch(`/api/users/register`, {
         method: "POST",
+        credentials: "include",
         headers: {
             "Content-Type": "application/json",
         },
