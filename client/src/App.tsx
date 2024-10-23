@@ -2,16 +2,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Layout from './layouts/Layout'
 import Register from './pages/Register'
-import { useForm } from 'react-hook-form'
 import SignIn from './pages/SignIn'
-
-type RegisterFormData = {
-  firstName: string;
-  lastName: string; 
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
 
 function App() {
 

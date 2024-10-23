@@ -58,14 +58,14 @@ router.post("/login", [
 )
 
 router.get("/validate-token", verifyToken, (req: Request, res: Response) => {
-    res.status(200).send({userId: req.userId})
+    return res.status(200).send({userId: req.userId})
+    
 })
 
 router.post("/logout", async (req: Request, res: Response) => {
-    console.log()
     res.cookie("auth_token", "", {
         expires: new Date(0)
-    });
+    })
     res.send();
 })
 
