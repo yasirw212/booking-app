@@ -14,8 +14,8 @@ const GuestsSection = () => {
                 <select className='mt-1' {...register("adultCount", {
                     required: "This field id required"
                 })}>
-                    {[1, 2, 3, 4, 5].map((num) => (
-                        <option value={num}>{num}</option>
+                    {[1, 2, 3, 4, 5].map((num, index) => (
+                        <option key={index} value={num}>{num}</option>
                     ))}
                 </select>
                 {errors.adultCount && (
@@ -27,8 +27,8 @@ const GuestsSection = () => {
                 <select className='mt-1' {...register("childCount", {
                     required: "This field is required"
                 })}>
-                    {[0,1,2,3,4,5].map((num) => (
-                        <option value={num}>{num}</option>
+                    {[0,1,2,3,4,5].map((num, index) => (
+                        <option key={index} value={num}>{num}</option>
                     ))}
                 </select>
                 {errors.childCount && (
